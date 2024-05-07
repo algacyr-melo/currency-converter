@@ -1,6 +1,6 @@
-package currencyconverter;
+package currencyconverter.api.exchangerate;
 
-public record ApiResponse (
+public record PairConversionResponse (
 String result,
 String baseCode,
 String targetCode,
