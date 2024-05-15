@@ -49,7 +49,10 @@ public class Main {
 				// keep prompting the user until it enters a valid input
 				String conversionAmount;
 				while (true) {
-					System.out.print("Digite o valor a ser convertido: ");
+					System.out.printf("Digite o valor a ser convertido de %s para %s: ",
+							conversion.from().code(),
+							conversion.to().code()
+					);
 					conversionAmount = s.nextLine();
 
 					// validate user input
@@ -86,8 +89,17 @@ public class Main {
 
 					// deserialize request body
 					PairConversionFields resFields = gson.fromJson(res.body(), PairConversionFields.class);
-					System.out.println(resFields);
+					System.out.printf("O valor de %s %s corresponde a %s %s",
+							conversionAmount,
+							conversion.from().code(),
+							resFields.conversionResult(),
+							conversion.to().code()
+					);
 
+					// prevent the output to get lost on the console
+					System.out.println();
+					System.out.print("Aperte ENTER para retornar ao menu principal...");
+					s.nextLine();
 				} catch (IOException | InterruptedException e) {
 					System.out.println(e.getMessage());
 				}
