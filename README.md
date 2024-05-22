@@ -1,30 +1,40 @@
 # currency-converter
 
-## Development Notes
+A simple, terminal-based currency converter with a few conversion options
 
-### Creating an ApiKeyReader
-In order to avoid hardcoding the API key, I put the key inside a
-config.properties file inside the resources dir. Then, I created the
-ApiKeyReader (as the name says) to read the API key from this config file.
+## Installation
 
-To achieve that I am using 2 usefull classes, Properties and FileReader.
+1. Clone this repository:
+```bash
+git clone git@github.com:algacyr-melo/currency-converter.git
+```
 
-#### Properties
-Properties class can be saved to or, in this case, loaded from a
-stream. It represents a set of key-value pairs, each one being a string.
+2. Navigate to the project directory:
+```bash
+cd currency-converter
+```
 
-for example:
-"api.key=YOUR_API_KEY"
+3. Build the project with Maven
+```bash
+mvn clean install
+```
 
-So the above string is going to be loaded from the config.properties file to my
-Properties object
+## Usage
 
-#### FileReader
-FileReader is meant for reading streams of characters. I am creating a
-FileReader in order to open the file and then passing it to the load() method
-of Properties class.
+1. Visit [exchangerate-api.com/](https://www.exchangerate-api.com/) and get a free key
+3. Navigate to the main directory
+```bash
+cd src/main
+```
+3. Create a config.properties file inside resources directory
 
-#### References
-[Class Properties](https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Properties.html)
-[Class FileReader](https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/FileReader.html)
+Use your favorite text editor, just ensure there is a resources directory with config.properties file within main directory
 
+```src/main/resources/config.properties```
+4. Paste your API key in config.properties file:
+```api.key=[YOUR_API_KEY]```
+
+5. Run the app:
+```bash
+mvn exec:java -Dexec.mainClass="currencyconverter.Main"
+```
