@@ -4,7 +4,6 @@ import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import currencyconverter.api.exchangerate.ApiKeyReader;
 import currencyconverter.api.exchangerate.PairConversionFields;
 
 import java.io.IOException;
@@ -65,7 +64,7 @@ public class Main {
 				}
 
                 // setup the request uri
-				String apiKey = ApiKeyReader.getKey();
+				String apiKey = System.getenv("API_KEY");
 				String uri = String.format(
 						"https://v6.exchangerate-api.com/v6/%s/pair/%s/%s/%s",
 						apiKey,

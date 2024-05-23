@@ -22,19 +22,11 @@ mvn clean install
 ## Usage
 
 1. Visit [exchangerate-api.com/](https://www.exchangerate-api.com/) and get a free key
-3. Navigate to the main directory
+2. Expose your key to the system
 ```bash
-cd src/main
+export API_KEY="put_your_key_here"
 ```
-3. Create a config.properties file inside resources directory
-
-Use your favorite text editor, just ensure there is a resources directory with config.properties file within main directory
-
-```src/main/resources/config.properties```
-4. Paste your API key in config.properties file:
-```api.key=[YOUR_API_KEY]```
-
-5. Run the app:
+3. Run the app:
 ```bash
 mvn exec:java -Dexec.mainClass="currencyconverter.Main"
 ```
