@@ -2,7 +2,11 @@
 
 A simple, terminal-based currency converter with a few conversion options
 
-## Installation
+## Install Dependencies
+
+- Java14+, Maven
+
+## Install
 
 1. Clone this repository:
 ```bash
@@ -22,11 +26,12 @@ mvn clean install
 ## Usage
 
 1. Visit [exchangerate-api.com/](https://www.exchangerate-api.com/) and get a free key
-2. Expose your key to the system
+2. Replace your key on the command below
 ```bash
-export API_KEY="put_your_key_here"
+export API_KEY="YOUR_API_KEY"
 ```
-3. Run the app:
+3. Start the converter:
 ```bash
 mvn exec:java -Dexec.mainClass="currencyconverter.Main"
 ```
+
